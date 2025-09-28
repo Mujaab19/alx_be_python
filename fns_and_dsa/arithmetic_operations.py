@@ -1,21 +1,15 @@
-# arithmetic_operations.py
-
-def perform_operation(num1: float, num2: float, operation: str):
+def perform_operation(num1, num2, operation):
     """
-    Perform a basic arithmetic operation.
+    Perform a basic arithmetic operation on two numbers.
 
     Parameters:
-        num1 (float): first number
-        num2 (float): second number
-        operation (str): 'add', 'subtract', 'multiply', or 'divide'
+        num1 (float): First number
+        num2 (float): Second number
+        operation (str): Operation type - 'add', 'subtract', 'multiply', 'divide'
 
     Returns:
-        float or str: result of the operation, or an error message string
-                      (e.g., for division by zero or invalid operation)
+        float or str: Result of the operation, or an error message for invalid cases
     """
-    # Normalize operation string so input is flexible
-    operation = operation.strip().lower()
-
     if operation == "add":
         return num1 + num2
     elif operation == "subtract":
@@ -23,9 +17,8 @@ def perform_operation(num1: float, num2: float, operation: str):
     elif operation == "multiply":
         return num1 * num2
     elif operation == "divide":
-        # Handle division by zero in a clear way that main.py can print
         if num2 == 0:
-            return "Error: Division by zero"
+            return "Error: Division by zero is not allowed."
         return num1 / num2
     else:
-        return "Error: Invalid operation"
+        return "Error: Invalid operation."
